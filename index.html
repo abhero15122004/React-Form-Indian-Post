@@ -1,119 +1,16 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Browse the menu, build an order, and follow the kitchen's preparation steps.">
-  <title>Your Restaurant — Food Menu</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="app-shell">
-    <aside class="sidebar">
-      <a class="brand" href="#home" aria-label="Your Restaurant home">
-        <span class="brand-mark" aria-hidden="true">🍔</span>
-        <strong>Your Restaurant Menu</strong>
-        <small>Your Slogan</small>
-      </a>
-      <nav aria-label="Main navigation">
-        <h2>Quick Links</h2>
-        <a href="#home">1. Home</a>
-        <a href="#orders">2. Your Orders</a>
-        <a href="#wallet" data-info="Your wallet feature can be connected here.">3. Wallet</a>
-        <a href="#profile" data-info="Your profile feature can be connected here.">4. Profile</a>
-        <a href="#logout" data-info="You are currently browsing as a guest.">5. Logout</a>
-        <h2 class="nav-subhead">More About Us</h2>
-        <a href="#blog" data-info="Our blog is coming soon.">1. Our blog</a>
-        <a href="#upcoming" data-info="New dishes are coming soon.">2. Upcoming Dishes</a>
-        <a href="#story" data-info="We make fresh food with love.">3. Our Story</a>
-        <a href="#social" data-info="Follow us on social media soon.">4. Social Media Links</a>
-      </nav>
-      <p class="sidebar-foot">Fresh food. Good mood.</p>
-    </aside>
-
-    <main class="main-content" id="home">
-      <header class="topbar">
-        <label class="search-wrap">
-          <span aria-hidden="true">⌕</span>
-          <input id="search-input" type="search" placeholder="Search food item" aria-label="Search food item">
-        </label>
-        <div class="top-actions">
-          <button class="btn btn-red" id="signup-btn">Signup</button>
-          <button class="btn btn-red" id="login-btn">Login</button>
-          <span class="avatar" aria-label="Restaurant chef">👨🏻‍🍳</span>
-        </div>
-      </header>
-
-      <section class="hero" aria-label="Weekend special">
-        <div class="hero-content">
-          <div class="hero-kicker">🍴 WEEKEND SPECIAL</div>
-          <p class="hero-script">Delicious</p>
-          <h1>FOOD MENU</h1>
-          <div class="hero-sticker"><span>UP TO</span><strong>50%</strong><span>OFF</span></div>
-          <div class="hero-bottom">
-            <span class="order-pill">ORDER NOW</span>
-            <div><strong>323-517-4946</strong><small>WWW.YOURWEBSITE.COM</small></div>
-            <div class="delivery"><strong>24/7</strong><small>Home Delivery</small></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="menu-section" aria-labelledby="menu-title">
-        <div class="section-heading">
-          <div><p class="eyebrow">MADE FRESH FOR YOU</p><h2 id="menu-title">Menu <span id="menu-count" class="count-pill">Loading…</span></h2></div>
-          <button class="btn btn-outline" id="view-orders-btn">View order <span id="cart-count">0</span></button>
-        </div>
-        <div id="menu-grid" class="menu-grid" aria-live="polite">
-          <div class="loading-state"><span class="loader"></span>Loading delicious food…</div>
-        </div>
-        <p id="empty-state" class="empty-state" hidden>No dishes match your search. Try another name.</p>
-      </section>
-
-      <section class="order-panel" id="orders">
-        <div class="order-panel-head">
-          <div><p class="eyebrow">YOUR SELECTION</p><h2>Your Order</h2></div>
-          <button class="text-button" id="clear-order-btn">Clear order</button>
-        </div>
-        <div id="cart-items" class="cart-items"><p class="muted">Your cart is empty. Add something tasty!</p></div>
-        <div class="cart-total"><span>Total</span><strong id="cart-total">$0.00</strong></div>
-        <div class="checkout-actions">
-          <button class="btn btn-outline" id="sample-order-btn">Try sample order</button>
-          <button class="btn btn-red" id="place-order-btn">Place order</button>
-        </div>
-        <p class="status-message" id="status-message" role="status" aria-live="polite"></p>
-      </section>
-
-      <section class="order-screen" id="order-screen" hidden>
-        <button class="back-link" id="back-to-menu">← Back to menu</button>
-        <div class="receipt-card">
-          <div class="receipt-icon" id="receipt-icon">🍽️</div>
-          <p class="eyebrow">ORDER UPDATE</p>
-          <h2 id="receipt-title">Your order is on its way</h2>
-          <p id="receipt-message">We are getting your food ready.</p>
-          <div class="progress-list">
-            <div class="progress-step" id="step-order"><span>1</span><div><strong>Order received</strong><small>Your order has been sent to the kitchen.</small></div><b>✓</b></div>
-            <div class="progress-step" id="step-prep"><span>2</span><div><strong>Preparing food</strong><small>The chef is preparing your order.</small></div><b>✓</b></div>
-            <div class="progress-step" id="step-paid"><span>3</span><div><strong>Payment complete</strong><small>Your sample payment has been confirmed.</small></div><b>✓</b></div>
-          </div>
-          <div class="receipt-total"><span>Order total</span><strong id="receipt-total">$0.00</strong></div>
-          <button class="btn btn-red" id="new-order-btn">Start a new order</button>
-        </div>
-      </section>
-
-      <footer><span>© <span id="year"></span> Your Restaurant</span><span>Good food, made with love.</span></footer>
-    </main>
-  </div>
-
-  <dialog id="message-dialog" class="message-dialog">
-    <button class="dialog-close" id="dialog-close" aria-label="Close dialog">×</button>
-    <div class="dialog-icon" id="dialog-icon">🍽️</div>
-    <h2 id="dialog-title">Welcome!</h2>
-    <p id="dialog-text">Thanks for visiting.</p>
-    <button class="btn btn-red" id="dialog-ok">Sounds good</button>
-  </dialog>
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pincode Lookup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

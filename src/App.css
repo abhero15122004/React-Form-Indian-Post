@@ -1,0 +1,285 @@
+.app-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+/* ============================
+   Before Clicking Button View
+   ============================ */
+.lookup-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 750px;
+}
+
+.lookup-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: -0.01em;
+}
+
+.lookup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.pincode-input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 15px;
+  color: #000000;
+  background-color: #ffffff;
+  border: 1.5px solid #000000;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.pincode-input::placeholder {
+  color: #767676;
+}
+
+.pincode-input:focus {
+  border-color: #000000;
+  box-shadow: 0 0 0 1px #000000;
+}
+
+.lookup-btn {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.lookup-btn:hover {
+  background-color: #222222;
+}
+
+.lookup-btn:active {
+  transform: scale(0.98);
+}
+
+.lookup-btn:disabled {
+  background-color: #777777;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #dc2626;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: -4px;
+}
+
+/* ============================
+   After Clicking Button View
+   ============================ */
+.results-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pincode-display {
+  font-size: 18px;
+  color: #000000;
+}
+
+.pincode-display strong {
+  font-weight: 700;
+}
+
+.message-display {
+  font-size: 16px;
+  color: #000000;
+}
+
+.message-display strong {
+  font-weight: 700;
+}
+
+.change-pincode-btn {
+  background: transparent;
+  color: #111;
+  border: 1px solid #111;
+  border-radius: 4px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.change-pincode-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Filter Bar */
+.filter-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.filter-input {
+  width: 100%;
+  padding: 10px 14px 10px 38px;
+  font-size: 15px;
+  color: #000000;
+  background-color: #ffffff;
+  border: 1.5px solid #000000;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.filter-input::placeholder {
+  color: #767676;
+}
+
+.filter-input:focus {
+  border-color: #000000;
+  box-shadow: 0 0 0 1px #000000;
+}
+
+/* Cards Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.post-office-card {
+  border: 1.5px solid #000000;
+  border-radius: 6px;
+  padding: 18px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.post-office-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.card-label {
+  font-weight: 600;
+  color: #000000;
+  min-width: 110px;
+}
+
+.card-value {
+  font-weight: 400;
+  color: #111827;
+  word-break: break-word;
+}
+
+/* Messages */
+.empty-message {
+  padding: 40px 16px;
+  text-align: center;
+  color: #4b5563;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #f9fafb;
+  border: 1px dashed #cbd5e1;
+  border-radius: 6px;
+}
+
+.error-banner {
+  padding: 20px;
+  background-color: #fef2f2;
+  border: 1.5px solid #ef4444;
+  border-radius: 6px;
+  color: #991b1b;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.error-banner p {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.retry-btn {
+  background-color: #991b1b;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.retry-btn:hover {
+  background-color: #7f1d1d;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .app-container {
+    margin: 20px auto;
+    padding: 0 16px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .results-header {
+    flex-direction: column;
+  }
+
+  .card-label {
+    min-width: 100px;
+  }
+}
